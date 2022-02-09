@@ -18,7 +18,7 @@
 /* Length of CTE in unit of 8[us] */
 #define CTE_LEN (0x14U)
 /* Number of CTE send in single periodic advertising train */
-#define PER_ADV_EVENT_CTE_COUNT 5
+#define PER_ADV_EVENT_CTE_COUNT 1
 
 static void adv_sent_cb(struct bt_le_ext_adv *adv,
 			struct bt_le_ext_adv_sent_info *info);
@@ -42,8 +42,8 @@ static struct bt_le_ext_adv_start_param ext_adv_start_param = {
 };
 
 static struct bt_le_per_adv_param per_adv_param = {
-	.interval_min = BT_GAP_ADV_SLOW_INT_MIN,
-	.interval_max = BT_GAP_ADV_SLOW_INT_MAX,
+	.interval_min = BT_GAP_PER_ADV_FAST_INT_MIN_1,
+	.interval_max = BT_GAP_PER_ADV_FAST_INT_MAX_1,
 	.options = BT_LE_ADV_OPT_USE_TX_POWER,
 };
 
